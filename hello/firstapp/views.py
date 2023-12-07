@@ -17,7 +17,12 @@ def products (request, productid=1):
 def users (request, id, name):
     output = "<h2>Пользователь</h2><h3>id:{0}Имя:{1}</h3>".format(id, name)
     return HttpResponse(output)
+from django.http import *
+from django.shortcuts import render
+from .forms import UserForm
+
 def index (request):
+  #  data={"age":50}
     #return render(request, "firstapp/home.html")
     #data={"header":"Передача параметра в шаюлон Django","massage":"загпужен шаблон templates/fistapp/index_app1.html"}
     #return render(request,"firstapp/index_app1.html", context=data)
@@ -27,7 +32,15 @@ def index (request):
    # addr =("Втноградная",23,45)
    # data={"header": header,"langs": langs,"user": user,"address":addr}
   # return render(request,"index.html",context=data)
-    return render(request,"firstapp/home.html")
+# return render(request,"firstapp/home.html")
+    #return render(request, "firstapp/index.html",context=data)
+    #cat = ["Ноутбуки", "Принтеры","Сканеры","Диски","Шнуры"]
+    #cat = []
+    #return render(request, "firstapp/index.html",
+                 # context={"cat": cat})
+    userform = UserForm()
+    return render(request, "firstapp/index.html",
+      {"form": userform})
 
 
 

@@ -1,0 +1,38 @@
+
+<!--{%comment%}{%extends "firstapp/base.html"%}
+{% block title %}Index{% endblock title %}
+{% block header %} Главная страница{% endblock header %}
+{% block content %} Связка шаблонов index.html и base.html{% endblock content%}{%endcomment%}-->
+{% block content %}
+<!--<p> Анализ возраста клиента</p>
+{% if age > 65%}
+ <p> Клиент достиг пенсионного возраста</p>
+{% else %}
+ <p> Клиент не является пенсионером</p>
+{% endif %}
+<p> Категория продуктов </p>
+{% for i in cat %}
+    <li>{{i}}</li>
+{% empty %}
+<li>Категория продуктов отсутствует</li>
+{% endfor %}
+{% with name="ЧАЙХАНА" nom=1 %}
+<div>
+    <p>При магазине работает {{name}}</p>
+    <p>Номер № {{nom}}</p>
+</div>
+{% endwith %}
+{% endblock content %}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма Django</title>
+</head>
+<body>
+    <table>
+    {{form}}
+    </table>
+</body>
+</html>
+
